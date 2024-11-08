@@ -1,16 +1,17 @@
 spring:
   data:
     mongodb:
-      username: eugene
-      password: butkevych
-      host: localhost
-      port: 27017
-      database: chat_app
-      authentication-database: admin
+      username: ${SPRING_DATA_MONGODB_USERNAME}
+      password: ${SPRING_DATA_MONGODB_PASSWORD}
+      host: ${SPRING_DATA_MONGODB_HOST}
+      port: ${SPRING_DATA_MONGODB_PORT}
+      database: ${SPRING_DATA_MONGODB_DATABASE}
+      authentication-database: ${SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE}
 
 server:
-  port: 8088
+  port: ${SERVER_PORT}
+
 logging:
   level:
-    org.springframework.web: DEBUG
-    org.springframework.data.mongodb: DEBUG
+    org.springframework.web: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB}
+    org.springframework.data.mongodb: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_DATA_MONGODB}
